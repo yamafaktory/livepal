@@ -1,0 +1,21 @@
+{
+  "name": "livepal",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "Davy Duperron",
+      "email": "yamafaktory@gmail.com",
+      "homepage": "http://github.com/yamafaktory"
+    }
+  ],
+  "description": "Connect to video pal over the world to learn a new language!",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-animation": "Polymer/core-animation#master",
+    "core-localstorage": "Polymer/core-localstorage#master",
+    "core-media-query": "Polymer/core-media-query#master",
+    "paper-elements": "Polymer/paper-elements#master"
+  }
+}

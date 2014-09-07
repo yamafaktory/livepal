@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>livepal</title>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Davy Duperron">
+    <script src="platform/platform.js"></script>
+    <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+    <link href="css/livepal.css" rel="stylesheet">
+  </head>
+  <body unresolved>
+    <paper-slider min="10" max="200" value="110"></paper-slider>
+    <script src="js/livepal.js"></script>
+    <script type='text/javascript'>//<![CDATA[
+document.write("<script async src='//HOST:1337/browser-sync-client.1.3.6.js'><\/script>".replace(/HOST/g, location.hostname));
+//]]></script>
+  </body>
+</html>
