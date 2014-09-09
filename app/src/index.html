@@ -8,14 +8,22 @@
     <meta name="description" content="">
     <meta name="author" content="Davy Duperron">
     <script src="platform/platform.js"></script>
-    <link rel="import" href="bower_components/paper-slider/paper-slider.html">
+    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+    
     <link href="css/livepal.css" rel="stylesheet">
   </head>
   <body unresolved>
-    <paper-slider min="10" max="200" value="110"></paper-slider>
+  <core-toolbar></core-toolbar>
+    <core-animated-pages transitions="hero-transition cross-fade">
+      <section id="page1">
+        <div id="hero1" hero-id="hero" hero>rdtyrgtdys</div>
+        <div id="bottom1" cross-fade>rtfdy</div>
+      </section>
+      <section id="page2">
+        <div id="hero2" hero-id="hero" hero>rty</div>
+        <div id="bottom2" cross-fade>rty</div>
+      </section>
+    </core-animated-pages>
     <script src="js/livepal.js"></script>
-    <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:1337/browser-sync-client.1.3.6.js'><\/script>".replace(/HOST/g, location.hostname));
-//]]></script>
   </body>
 </html>

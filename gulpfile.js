@@ -1,11 +1,13 @@
 'use strict';
 
-var browserify  = require('browserify');
+var browserify = require('browserify');
 var browserSync = require('browser-sync');
-var es6ify      = require('es6ify');
-var gulp        = require('gulp');
-var $           = require('gulp-load-plugins')();
-var source      = require('vinyl-source-stream');
+var es6ify = require('es6ify');
+var gulp = require('gulp');
+var reload = browserSync.reload;
+var runSequence = require('run-sequence');
+var source = require('vinyl-source-stream');
+var $ = require('gulp-load-plugins')();
 
 es6ify.traceurOverrides = {blockBinding : true};
 
@@ -33,21 +35,21 @@ var path = {
 };
 
 var tasks = [
-  'lint',
+  'jshint',
   'compile',
-  'index', // => will launch webComponents then vulcanize
+  'index',
+  'web-components',
+  'vulcanize',
   'images',
-  'myth'  
+  'myth',
+  'browser-sync'
 ];
 
 gulp.task('browser-sync', ['nodemon'], function() {
-  return browserSync({
-    proxy: {
-      host: 'http://localhost',
-      port: '1337'
-    },
+  browserSync.init(null, {
     notify: false,
-    open: false
+    proxy: 'http://localhost:1337',
+    port: 3000
   });
 });
 
@@ -59,11 +61,10 @@ gulp.task('compile', function () {
     .bundle()
     .pipe(source('livepal.js'))
     .pipe($.streamify($.uglify({mangle: false})))
-    .pipe(gulp.dest(path.js.build))
-    .pipe(browserSync.reload({stream: true, once: true}));
+    .pipe(gulp.dest(path.js.build));
 });
 
-gulp.task('index', ['webComponents'], function () {
+gulp.task('index', function () {
   return gulp.src(path.index.src)
     .pipe(gulp.dest(path.index.build));
 });
@@ -71,11 +72,10 @@ gulp.task('index', ['webComponents'], function () {
 gulp.task('images', function () {
   return gulp.src(path.images.src)
     .pipe($.imagemin())
-    .pipe(gulp.dest(path.images.build))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest(path.images.build));
 });
 
-gulp.task('lint', function () {
+gulp.task('jshint', function () {
   return gulp.src(path.js.src)
     .pipe($.jshint('.jshintrc'))
     .pipe($.jshint.reporter('jshint-stylish'));
@@ -84,32 +84,29 @@ gulp.task('lint', function () {
 gulp.task('myth', function () {
   return gulp.src(path.css.src)
     .pipe($.myth())
-    .pipe(gulp.dest(path.css.build))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest(path.css.build));
 });
 
-gulp.task('nodemon', function () {
-  $.nodemon({script: 'server/index.js'})
-    .on('start', tasks)
-    .on('change', tasks);
+gulp.task('nodemon', function (cb) {
+  return $.nodemon({script: 'server/index.js'})
+    .on('start', cb);
 });
 
 gulp.task('vulcanize', function () {
   return gulp.src('app/build/index.html')
     .pipe($.vulcanize({dest: 'app/build', strip: true}))
-    .pipe(gulp.dest('app/build'))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest('app/build'));
 });
 
-gulp.task('watch', function () {
-  gulp.watch(path.css.src, ['myth']);
-  gulp.watch(path.html.src, ['html']);
-  gulp.watch(path.js.src, ['compile']);
-});
-
-gulp.task('webComponents', ['vulcanize'], function () {
+gulp.task('web-components', function () {
   return gulp.src(path.webComponents.src)
     .pipe(gulp.dest(path.webComponents.build));
 });
 
-gulp.task('default', ['browser-sync']);
+gulp.task('default', function () {
+  runSequence(tasks);
+  gulp.watch(path.css.src, ['myth', reload]);
+  gulp.watch(path.webComponents.src, ['index', reload]);
+  gulp.watch(path.index.src, ['index', reload]);
+  gulp.watch(path.js.src, ['compile', reload]);
+});

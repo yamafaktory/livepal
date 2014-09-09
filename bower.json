@@ -14,6 +14,7 @@
   "devDependencies": {
     "polymer": "Polymer/polymer#master",
     "core-animation": "Polymer/core-animation#master",
+    "core-animated-pages": "Polymer/core-animated-pages#master",
     "core-localstorage": "Polymer/core-localstorage#master",
     "core-media-query": "Polymer/core-media-query#master",
     "paper-elements": "Polymer/paper-elements#master"
