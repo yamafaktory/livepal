@@ -8,22 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="Davy Duperron">
     <script src="platform/platform.js"></script>
+    <!-- polymer components -->
     <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
-    
-    <link href="css/livepal.css" rel="stylesheet">
+    <link rel="import" href="bower_components/core-style/core-style.html">
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/font-roboto/roboto.html">
+    <!-- livepal app components -->
+    <link rel="import" href="web-components/livepal-style.html">
+    <link rel="import" href="web-components/livepal-ui.html">
   </head>
-  <body unresolved>
-  <core-toolbar></core-toolbar>
-    <core-animated-pages transitions="hero-transition cross-fade">
-      <section id="page1">
-        <div id="hero1" hero-id="hero" hero>rdtyrgtdys</div>
-        <div id="bottom1" cross-fade>rtfdy</div>
-      </section>
-      <section id="page2">
-        <div id="hero2" hero-id="hero" hero>rty</div>
-        <div id="bottom2" cross-fade>rty</div>
-      </section>
-    </core-animated-pages>
+  <body fullbleed unresolved>
+    <livepal-ui vertical layout></livepal-ui>
     <script src="js/livepal.js"></script>
   </body>
 </html>

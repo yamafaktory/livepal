@@ -1,0 +1,18 @@
+<polymer-element name="livepal-ui" attributes="">
+
+  <template>
+
+    <core-style ref="livepal-ui"></core-style>
+    <core-toolbar id="toolbar"><h1>livepal</h1></core-toolbar>
+    <core-animated-pages transitions="hero-transition" selected="{{selected}}">
+      <section id="page1">
+        <div id="hero1" hero-id="1" hero>sdfsdf</div>
+      </section>
+      <section id="page2">
+        <div id="hero2" hero-id="2" hero on-tap="{{selected = 'hero1'}}">hjghj</div>
+      </section>
+    </core-animated-pages>
+
+  </template>
+
+</polymer-element>

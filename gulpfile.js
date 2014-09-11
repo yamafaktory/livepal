@@ -12,10 +12,6 @@ var $ = require('gulp-load-plugins')();
 es6ify.traceurOverrides = {blockBinding : true};
 
 var path = {
-  css: {
-    src: 'app/src/css/*.css',
-    build: 'app/build/css'
-  },
   webComponents: {
     src: 'app/src/web-components/*.html',
     build: 'app/build/web-components'
@@ -41,7 +37,6 @@ var tasks = [
   'web-components',
   'vulcanize',
   'images',
-  'myth',
   'browser-sync'
 ];
 
@@ -81,12 +76,6 @@ gulp.task('jshint', function () {
     .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('myth', function () {
-  return gulp.src(path.css.src)
-    .pipe($.myth())
-    .pipe(gulp.dest(path.css.build));
-});
-
 gulp.task('nodemon', function (cb) {
   return $.nodemon({script: 'server/index.js'})
     .on('start', cb);
@@ -105,8 +94,7 @@ gulp.task('web-components', function () {
 
 gulp.task('default', function () {
   runSequence(tasks);
-  gulp.watch(path.css.src, ['myth', reload]);
-  gulp.watch(path.webComponents.src, ['index', reload]);
+  gulp.watch(path.webComponents.src, ['web-components', reload]);
   gulp.watch(path.index.src, ['index', reload]);
   gulp.watch(path.js.src, ['compile', reload]);
 });

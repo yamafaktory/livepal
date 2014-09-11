@@ -3,7 +3,7 @@
 let imports = {};
 
 // Import components as prototypes
-import './test';
+import './livepal-ui';
 
 // When all components are ready, do stuff
 window.addEventListener('polymer-ready', event => {
