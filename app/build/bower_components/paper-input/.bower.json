@@ -9,11 +9,11 @@
     "core-style": "Polymer/core-style#master"
   },
   "homepage": "https://github.com/Polymer/paper-input",
-  "_release": "f26894c0fc",
+  "_release": "82e60f7c3a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f26894c0fc3a5d0e23af4a44a02814d2dd105551"
+    "commit": "82e60f7c3a27d4da2b39fc21349a259fdad13e51"
   },
   "_source": "git://github.com/Polymer/paper-input.git",
   "_target": "master",

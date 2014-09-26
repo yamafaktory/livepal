@@ -9,7 +9,7 @@
     "paper-button": "Polymer/paper-button#master",
     "paper-checkbox": "Polymer/paper-checkbox#master",
     "paper-dialog": "Polymer/paper-dialog#master",
-    "paper-dropdown": "Polymer/paper-dropdown#master",
+    "paper-dropdown-menu": "Polymer/paper-dropdown-menu#master",
     "paper-fab": "Polymer/paper-fab#master",
     "paper-icon-button": "Polymer/paper-icon-button#master",
     "paper-input": "Polymer/paper-input#master",
@@ -27,11 +27,11 @@
     "sampler-scaffold": "Polymer/sampler-scaffold#master"
   },
   "homepage": "https://github.com/Polymer/paper-elements",
-  "_release": "c313ffd76b",
+  "_release": "e2f26f227b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c313ffd76b616be6288844683eeab4e8a20ee23a"
+    "commit": "e2f26f227b390d5691b59fa16c36bc8535279d1b"
   },
   "_source": "git://github.com/Polymer/paper-elements.git",
   "_target": "master",

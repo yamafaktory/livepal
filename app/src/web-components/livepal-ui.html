@@ -4,12 +4,12 @@
 
     <core-style ref="livepal-ui"></core-style>
     <core-toolbar id="toolbar"><h1>livepal</h1></core-toolbar>
-    <core-animated-pages transitions="hero-transition" selected="{{selected}}">
-      <section id="page1">
-        <div id="hero1" hero-id="1" hero>sdfsdf</div>
+    <core-animated-pages transitions="cross-fade" selected="{{ selected }}" selectedindex="0" id="main">
+      <section id="section1">
+        <div id="card1" data-target="1" cross-fade on-tap="{{ change }}"></div>
       </section>
-      <section id="page2">
-        <div id="hero2" hero-id="2" hero on-tap="{{selected = 'hero1'}}">hjghj</div>
+      <section id="section2">
+        <div id="card2" data-target="0" cross-fade on-tap="{{ change }}"></div>
       </section>
     </core-animated-pages>
 

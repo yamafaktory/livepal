@@ -4,12 +4,15 @@
   "dependencies": {
     "polymer": "Polymer/polymer#master"
   },
+  "devDependencies": {
+    "polymer-test-tools": "Polymer/polymer-test-tools#master"
+  },
   "homepage": "https://github.com/Polymer/core-localstorage",
-  "_release": "d65b1b6610",
+  "_release": "f59260304a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d65b1b661042886de560baa2c7e399bddcd599ed"
+    "commit": "f59260304afad9e428113341bbab3acafdb2436e"
   },
   "_source": "git://github.com/Polymer/core-localstorage.git",
   "_target": "master",
