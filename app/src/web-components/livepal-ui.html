@@ -1,16 +1,28 @@
-<polymer-element name="livepal-ui" attributes="">
+<polymer-element name="livepal-ui">
 
   <template>
 
-    <core-style ref="livepal-ui"></core-style>
-    <core-toolbar id="toolbar"><h1>livepal</h1></core-toolbar>
-    <core-animated-pages transitions="cross-fade" selected="{{ selected }}" selectedindex="0" id="main">
-      <section id="section1">
-        <div id="card1" data-target="1" cross-fade on-tap="{{ change }}"></div>
+  <core-style ref="livepal-ui"></core-style>
+
+    <core-toolbar id="toolbar" horizontal center-justified layout>
+      <h1>livepal</h1>
+    </core-toolbar>
+
+    <core-animated-pages transitions="slide-down slide-up" selected="{{selected}}" selectedindex="0" id="main" on-core-animated-pages-transition-end="{{complete}}" flex>
+
+      <section id="section1">{{nameClass}}
+        <div id="card1" slide-down>
+          <paper-input id="name" floatingLabel="true" label="Name" required error="Your name is mandatory" class="{{nameClass}}"></paper-input>
+          <paper-fab icon="done" disabled="{{disableForm}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+        </div>
       </section>
+
       <section id="section2">
-        <div id="card2" data-target="0" cross-fade on-tap="{{ change }}"></div>
+        <div id="card2" data-target="0" slide-up on-tap="{{switch}}">
+          Test
+        </div>
       </section>
+
     </core-animated-pages>
 
   </template>

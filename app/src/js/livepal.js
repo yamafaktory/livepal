@@ -1,7 +1,5 @@
 'use strict';
 
-let imports = {};
-
 // Import components as prototypes
 import './livepal-ui';
 
