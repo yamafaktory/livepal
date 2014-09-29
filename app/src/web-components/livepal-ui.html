@@ -10,10 +10,12 @@
 
     <core-animated-pages transitions="slide-down slide-up" selected="{{selected}}" selectedindex="0" id="main" on-core-animated-pages-transition-end="{{complete}}" flex>
 
-      <section id="section1">{{nameClass}}
+      <section id="section1">
         <div id="card1" slide-down>
-          <paper-input id="name" floatingLabel="true" label="Name" required error="Your name is mandatory" class="{{nameClass}}"></paper-input>
-          <paper-fab icon="done" disabled="{{disableForm}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+          <form id="form">
+          <paper-input id="name" floatingLabel="true" label="Name" required error="Your name is mandatory"></paper-input>
+          <paper-fab icon="done" disabled?="{{$.name.inputValue.length < 5}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+          </form>
         </div>
       </section>
 

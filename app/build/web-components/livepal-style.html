@@ -10,7 +10,7 @@
     // And one accent color
     lime200: 'rgba(238, 255, 65, 1)',
     // Common colors
-    white: 'rgba(255, 255, 255, 1)',
+    white: 'rgba(255, 255, 255, .7)',
     greyLight: 'rgba(200, 200, 200, .3)',
     greyDark: 'rgba(100, 100, 100, .3)',
   };
@@ -23,7 +23,6 @@
 
   // Overriding paper elements defaults
 
-  CoreStyle.g.paperInput.focusedColor = CoreStyle.g.colors.purple700;
   CoreStyle.g.paperInput.focusedColor = CoreStyle.g.colors.purple700;
 
 </script>
@@ -60,6 +59,10 @@
     height: 100%;
     width: 100%;
     z-index: 0;
+  }
+
+  #form {
+    background-color: {{g.colors.white}};
   }
 
   .lime {

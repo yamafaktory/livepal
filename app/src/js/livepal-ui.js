@@ -5,17 +5,17 @@ Polymer('livepal-ui', {
   },
   // Set observers
   observe: {
-    'nameClass': 'checkForm',
+    '$.name.inputValue': 'checkName'
   },
   // Methods
-  checkForm: function () {
-    console.log('changed');
+  checkName: function () {
+    console.log(this.$.name.inputValue.length);
+    if(this.$.name.inputValue.length < 5){
+      this.$.name.classList.add('invalid');
+      console.log('not valid');
+    }
   },
   switch: function (event, detail, sender) {
-    if(this.$.name.classList.contains('invalid')){
-      console.log('not good');
-    } else {
-      this.$.main.selected = sender.dataset.target;
-    }
+    this.$.main.selected = sender.dataset.target;
   }
 });
