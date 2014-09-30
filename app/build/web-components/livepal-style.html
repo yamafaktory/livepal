@@ -4,13 +4,15 @@
 
   CoreStyle.g.colors = {
     // Three primary color hues
-    purple700: 'rgba(123, 31, 162, 1)',
-    purple500: 'rgba(156, 39, 176, 1)',
-    purple100: 'rgba(225, 190, 231, 1)',
+    cyan700: 'rgba(0, 151, 167, 1)',
+    cyan500: 'rgba(0, 188, 212, 1)',
+    cyan100: 'rgba(178, 235, 242, 1)',
     // And one accent color
     lime200: 'rgba(238, 255, 65, 1)',
-    // Common colors
-    white: 'rgba(255, 255, 255, .7)',
+    // Error color
+    pink500: 'rgba(233, 30, 99, 1)',
+    // Other colors
+    white: 'rgba(255, 255, 255, 1)',
     greyLight: 'rgba(200, 200, 200, .3)',
     greyDark: 'rgba(100, 100, 100, .3)',
   };
@@ -23,7 +25,8 @@
 
   // Overriding paper elements defaults
 
-  CoreStyle.g.paperInput.focusedColor = CoreStyle.g.colors.purple700;
+  CoreStyle.g.paperInput.focusedColor = CoreStyle.g.colors.cyan700;
+  CoreStyle.g.paperInput.invalidColor = CoreStyle.g.colors.pink500;
 
 </script>
 
@@ -33,6 +36,7 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
+    background-color: {{g.colors.white}};
   }
 
   paper-input {
@@ -43,26 +47,21 @@
   #toolbar {
     font-family: {{g.fonts.roboto}};
     color: {{g.colors.white}};
-    background-color: {{g.colors.purple700}};
+    background-color: {{g.colors.cyan500}};
     z-index: 1;
   }
 
-  #card1 {
-    background-color: {{g.colors.greyLight}};
+  #personae {
     height: 100%;
     width: 100%;
     z-index: 0;
+    padding: 1rem;
   }
 
   #card2 {
-    background-color: {{g.colors.greyDark}};
     height: 100%;
     width: 100%;
     z-index: 0;
-  }
-
-  #form {
-    background-color: {{g.colors.white}};
   }
 
   .lime {

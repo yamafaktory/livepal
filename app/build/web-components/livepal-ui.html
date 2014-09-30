@@ -10,16 +10,14 @@
 
     <core-animated-pages transitions="slide-down slide-up" selected="{{selected}}" selectedindex="0" id="main" on-core-animated-pages-transition-end="{{complete}}" flex>
 
-      <section id="section1">
-        <div id="card1" slide-down>
-          <form id="form">
-          <paper-input id="name" floatingLabel="true" label="Name" required error="Your name is mandatory"></paper-input>
-          <paper-fab icon="done" disabled?="{{$.name.inputValue.length < 5}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
-          </form>
+      <section>
+        <div id="personae" slide-down>
+          <paper-input id="username" floatingLabel="true" label="Username" required error="Username is mandatory (5 to 20 alphanumeric characters)" pattern="^\w{5,20}$"></paper-input>
+          <paper-fab icon="done" disabled?="{{$.username.inputValue.length < 5 || $.username.inputValue.length > 20}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
         </div>
       </section>
 
-      <section id="section2">
+      <section>
         <div id="card2" data-target="0" slide-up on-tap="{{switch}}">
           Test
         </div>
