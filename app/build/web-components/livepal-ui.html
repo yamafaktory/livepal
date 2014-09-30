@@ -11,15 +11,33 @@
     <core-animated-pages transitions="slide-down slide-up" selected="{{selected}}" selectedindex="0" id="main" on-core-animated-pages-transition-end="{{complete}}" flex>
 
       <section>
-        <div id="personae" slide-down>
-          <paper-input id="username" floatingLabel="true" label="Username" required error="Username is mandatory (5 to 20 alphanumeric characters)" pattern="^\w{5,20}$"></paper-input>
-          <paper-fab icon="done" disabled?="{{$.username.inputValue.length < 5 || $.username.inputValue.length > 20}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+        <div class="container" slide-down horizontal center-justified layout>
+          <div class="card" self-center>
+            <paper-shadow z="1"></paper-shadow>
+            <h2>Choose a username</h2>
+            <paper-input id="username" floatingLabel="true" label="Username" required error="5 to 20 characters without spaces" pattern="^\S{5,20}$"></paper-input>
+            <paper-fab icon="done" disabled?="{{$.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+          </div>
         </div>
       </section>
 
       <section>
-        <div id="card2" data-target="0" slide-up on-tap="{{switch}}">
-          Test
+        <div class="container" slide-up horizontal center-justified layout>
+          <div class="card" self-center>
+            <paper-shadow z="1"></paper-shadow>
+            <h2>Make a gif</h2>
+            <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime"></paper-fab>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container" slide-down horizontal center-justified layout>
+          <div class="card" self-center>
+            <paper-shadow z="1"></paper-shadow>
+            <h2>fzfe</h2>
+            <paper-fab icon="done" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+          </div>
         </div>
       </section>
 

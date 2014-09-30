@@ -13,8 +13,8 @@
     pink500: 'rgba(233, 30, 99, 1)',
     // Other colors
     white: 'rgba(255, 255, 255, 1)',
-    greyLight: 'rgba(200, 200, 200, .3)',
-    greyDark: 'rgba(100, 100, 100, .3)',
+    greyLight: 'rgba(200, 200, 200, 1)',
+    greyDark: 'rgba(100, 100, 100, 1)'
   };
 
   // Fonts
@@ -44,6 +44,10 @@
     font-size: 1.4rem;
   }
 
+  h2 {
+    color: {{g.colors.greyDark}};
+  }
+
   #toolbar {
     font-family: {{g.fonts.roboto}};
     color: {{g.colors.white}};
@@ -51,17 +55,14 @@
     z-index: 1;
   }
 
-  #personae {
+  .container {
     height: 100%;
     width: 100%;
     z-index: 0;
-    padding: 1rem;
   }
 
-  #card2 {
-    height: 100%;
-    width: 100%;
-    z-index: 0;
+  .card {
+    padding: 2rem;
   }
 
   .lime {
