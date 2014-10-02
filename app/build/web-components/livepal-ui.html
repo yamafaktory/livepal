@@ -12,20 +12,25 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <div class="card" self-center>
+          <div class="card" self-center vertical center layout>
             <paper-shadow z="1"></paper-shadow>
-            <h2>Choose a username</h2>
+            <core-toolbar class="card-toolbar" horizontal layout center>
+              <h2 class="card-title">Choose a username</h2>
+            </core-toolbar>
             <paper-input id="username" floatingLabel="true" label="Username" required error="5 to 20 characters without spaces" pattern="^\S{5,20}$"></paper-input>
-            <paper-fab icon="done" disabled?="{{$.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+            <paper-fab icon="done" hidden?="{{$.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
           </div>
         </div>
       </section>
 
       <section>
         <div class="container" slide-up horizontal center-justified layout>
-          <div class="card" self-center>
+          <div class="card" self-center vertical center layout>
             <paper-shadow z="1"></paper-shadow>
-            <h2>Make a gif</h2>
+            <core-toolbar class="card-toolbar" horizontal layout center>
+              <h2 class="card-title">Make a gifie</h2>
+            </core-toolbar>
+            <img src="../images/user.svg" on-tap="{{selfie}}" id="gifie">
             <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime"></paper-fab>
           </div>
         </div>
@@ -33,7 +38,7 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <div class="card" self-center>
+          <div class="card" self-center vertical center layout>
             <paper-shadow z="1"></paper-shadow>
             <h2>fzfe</h2>
             <paper-fab icon="done" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>

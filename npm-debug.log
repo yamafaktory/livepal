@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/yamafaktory/.nvm/v0.11.14/bin/node',
+1 verbose cli   '/home/yamafaktory/.nvm/v0.11.14/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/home/yamafaktory/Webdev/livepal',
+5 verbose install   [ 'bower',
+5 verbose install     'browser-sync',
+5 verbose install     'browserify',
+5 verbose install     'es6ify',
+5 verbose install     'gifshot',
+5 verbose install     'gulp',
+5 verbose install     'gulp-concat',
+5 verbose install     'gulp-imagemin',
+5 verbose install     'gulp-jshint',
+5 verbose install     'gulp-load-plugins',
+5 verbose install     'gulp-myth',
+5 verbose install     'gulp-nodemon',
+5 verbose install     'gulp-sourcemaps',
+5 verbose install     'gulp-streamify',
+5 verbose install     'gulp-uglify',
+5 verbose install     'gulp-vulcanize',
+5 verbose install     'jshint-stylish',
+5 verbose install     'koa',
+5 verbose install     'koa-static',
+5 verbose install     'myth',
+5 verbose install     'run-sequence',
+5 verbose install     'vinyl-source-stream' ] ]
+6 info preinstall livepal@0.0.1
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping gulp-concat@^2.4.1 /home/yamafaktory/Webdev/livepal
+9 verbose already installed skipping gulp-imagemin@^1.0.1 /home/yamafaktory/Webdev/livepal
+10 verbose already installed skipping gulp-jshint@^1.8.4 /home/yamafaktory/Webdev/livepal
+11 verbose already installed skipping gulp-load-plugins@^0.6.0 /home/yamafaktory/Webdev/livepal
+12 verbose already installed skipping gulp-myth@^1.0.0 /home/yamafaktory/Webdev/livepal
+13 verbose already installed skipping gulp-nodemon@^1.0.3 /home/yamafaktory/Webdev/livepal
+14 verbose already installed skipping gulp-sourcemaps@^1.2.2 /home/yamafaktory/Webdev/livepal
+15 verbose already installed skipping gulp-streamify@^0.0.5 /home/yamafaktory/Webdev/livepal
+16 verbose already installed skipping gulp-uglify@^0.3.2 /home/yamafaktory/Webdev/livepal
+17 verbose already installed skipping gulp-vulcanize@^1.1.0 /home/yamafaktory/Webdev/livepal
+18 verbose already installed skipping jshint-stylish@^0.4.0 /home/yamafaktory/Webdev/livepal
+19 verbose already installed skipping koa@^0.10.0 /home/yamafaktory/Webdev/livepal
+20 verbose already installed skipping koa-static@^1.4.7 /home/yamafaktory/Webdev/livepal
+21 verbose already installed skipping myth@^1.2.0 /home/yamafaktory/Webdev/livepal
+22 verbose already installed skipping run-sequence@^0.3.7 /home/yamafaktory/Webdev/livepal
+23 verbose already installed skipping vinyl-source-stream@^0.1.1 /home/yamafaktory/Webdev/livepal
+24 verbose already installed skipping bower@^1.3.11 /home/yamafaktory/Webdev/livepal
+25 verbose already installed skipping browser-sync@^1.5.1 /home/yamafaktory/Webdev/livepal
+26 verbose already installed skipping browserify@^5.12.0 /home/yamafaktory/Webdev/livepal
+27 verbose already installed skipping es6ify@^1.4.0 /home/yamafaktory/Webdev/livepal
+28 verbose cache add [ 'gifshot@git://github.com:yahoo/gifshot.git', null ]
+29 verbose cache add spec="gifshot@git://github.com:yahoo/gifshot.git" args=["gifshot@git://github.com:yahoo/gifshot.git",null]
+30 verbose parsed spec { raw: 'gifshot@git://github.com:yahoo/gifshot.git',
+30 verbose parsed spec   scope: null,
+30 verbose parsed spec   name: 'gifshot',
+30 verbose parsed spec   rawSpec: 'git://github.com:yahoo/gifshot.git',
+30 verbose parsed spec   spec: 'git://github.com:yahoo/gifshot.git',
+30 verbose parsed spec   type: 'git' }
+31 verbose already installed skipping gulp@^3.8.8 /home/yamafaktory/Webdev/livepal
+32 verbose parsed spec { raw: 'gifshot@git://github.com:yahoo/gifshot.git',
+32 verbose parsed spec   scope: null,
+32 verbose parsed spec   name: 'gifshot',
+32 verbose parsed spec   rawSpec: 'git://github.com:yahoo/gifshot.git',
+32 verbose parsed spec   spec: 'git://github.com:yahoo/gifshot.git',
+32 verbose parsed spec   type: 'git' }
+33 verbose addRemoteGit u="git://github.com:yahoo/gifshot.git" silent=false
+34 silly addRemoteGit parsed { protocol: 'git:',
+34 silly addRemoteGit   slashes: true,
+34 silly addRemoteGit   auth: null,
+34 silly addRemoteGit   host: 'github.com',
+34 silly addRemoteGit   port: null,
+34 silly addRemoteGit   hostname: 'github.com',
+34 silly addRemoteGit   hash: null,
+34 silly addRemoteGit   search: '',
+34 silly addRemoteGit   query: {},
+34 silly addRemoteGit   pathname: '/:yahoo/gifshot.git',
+34 silly addRemoteGit   path: '/:yahoo/gifshot.git',
+34 silly addRemoteGit   href: 'git://github.com/:yahoo/gifshot.git' }
+35 silly lockFile 95b30f5f-git-github-com-yahoo-gifshot-git git://github.com:yahoo/gifshot.git
+36 verbose lock git://github.com:yahoo/gifshot.git /home/yamafaktory/.npm/95b30f5f-git-github-com-yahoo-gifshot-git.lock
+37 verbose addRemoteGit [ 'git://github.com:yahoo/gifshot.git', 'master' ]
+38 error git clone git://github.com:yahoo/gifshot.git Cloning into bare repository '/home/yamafaktory/.npm/_git-remotes/git-github-com-yahoo-gifshot-git-95b30f5f'...
+38 error git clone git://github.com:yahoo/gifshot.git fatal: Unable to look up github.com (port yahoo) (Servname not supported for ai_socktype)
+39 silly lockFile 95b30f5f-git-github-com-yahoo-gifshot-git git://github.com:yahoo/gifshot.git
+40 silly lockFile 95b30f5f-git-github-com-yahoo-gifshot-git git://github.com:yahoo/gifshot.git
+41 verbose stack Error: Command failed: git clone --mirror git://github.com:yahoo/gifshot.git /home/yamafaktory/.npm/_git-remotes/git-github-com-yahoo-gifshot-git-95b30f5f
+41 verbose stack Cloning into bare repository '/home/yamafaktory/.npm/_git-remotes/git-github-com-yahoo-gifshot-git-95b30f5f'...
+41 verbose stack fatal: Unable to look up github.com (port yahoo) (Servname not supported for ai_socktype)
+41 verbose stack
+41 verbose stack     at ChildProcess.exithandler (child_process.js:732:12)
+41 verbose stack     at ChildProcess.emit (events.js:110:17)
+41 verbose stack     at maybeClose (child_process.js:1000:16)
+41 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1072:5)
+42 verbose cwd /home/yamafaktory/Webdev/livepal
+43 error Linux 3.16.3-1-ARCH
+44 error argv "/home/yamafaktory/.nvm/v0.11.14/bin/node" "/home/yamafaktory/.nvm/v0.11.14/bin/npm" "install"
+45 error node v0.11.14
+46 error npm  v2.0.0
+47 error code 128
+48 error Command failed: git clone --mirror git://github.com:yahoo/gifshot.git /home/yamafaktory/.npm/_git-remotes/git-github-com-yahoo-gifshot-git-95b30f5f
+48 error Cloning into bare repository '/home/yamafaktory/.npm/_git-remotes/git-github-com-yahoo-gifshot-git-95b30f5f'...
+48 error fatal: Unable to look up github.com (port yahoo) (Servname not supported for ai_socktype)
+49 error If you need help, you may report this error at:
+49 error     <http://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
