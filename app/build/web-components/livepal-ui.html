@@ -28,10 +28,12 @@
           <div class="card" self-center vertical center layout>
             <paper-shadow z="1"></paper-shadow>
             <core-toolbar class="card-toolbar" horizontal layout center>
-              <h2 class="card-title">Make a gifie</h2>
+              <h2 class="card-title">{{gifieCardTitle}}</h2>
             </core-toolbar>
-            <img src="../images/user.svg" on-tap="{{selfie}}" id="gifie">
-            <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime"></paper-fab>
+            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></video>
+            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}">
+            <paper-progress value="{{gifieProgress}}" secondaryProgress="30" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
+            <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime" hidden?="{{gifieProgress !== 100}}"></paper-fab>
           </div>
         </div>
       </section>

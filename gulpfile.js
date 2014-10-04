@@ -97,4 +97,5 @@ gulp.task('default', function () {
   gulp.watch(path.webComponents.src, ['web-components', reload]);
   gulp.watch(path.index.src, ['index', reload]);
   gulp.watch(path.js.src, ['compile', reload]);
+  gulp.watch(path.images.src, ['images', reload]);
 });

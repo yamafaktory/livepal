@@ -44,6 +44,10 @@
     font-size: 1.4rem;
   }
 
+  paper-progress::shadow #activeProgress {
+    background-color: {{g.colors.lime200}};
+  }
+
   h2 {
     margin: 0;
     padding: 0;
@@ -51,7 +55,15 @@
   }
 
   #gifie {
-    margin: 2rem;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+  }
+
+  #video {
+    height: 200px;
+    width: 200px;
+    background-color: {{g.colors.greyDark}};
   }
 
   #toolbar {
