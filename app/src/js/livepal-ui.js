@@ -1,6 +1,7 @@
 Polymer('livepal-ui', {
   // Create
   created: function () {
+    this.devices = {};
     this.gifieCardTitle = 'Make a gifie';
     this.gifieProgress = 0;
   },
@@ -49,5 +50,8 @@ Polymer('livepal-ui', {
   },
   switch: function (event, detail, sender) {
     this.$.main.selected = sender.dataset.target;
+  },
+  zValue: function (isMobile) {
+    return isMobile ? 0 : 1;
   }
 });

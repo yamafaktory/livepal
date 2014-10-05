@@ -2,6 +2,9 @@
 
   <template>
 
+  <core-media-query query="max-width: 40em" queryMatches="{{devices.mobile}}"></core-media-query>
+  <core-media-query query="min-width: 40.063em" queryMatches="{{devices.large}}"></core-media-query>
+
   <core-style ref="livepal-ui"></core-style>
 
     <core-toolbar id="toolbar" horizontal center-justified layout>
@@ -12,8 +15,8 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <div class="card" self-center vertical center layout>
-            <paper-shadow z="1"></paper-shadow>
+          <div class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout>
+            <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Choose a username</h2>
             </core-toolbar>
@@ -25,14 +28,14 @@
 
       <section>
         <div class="container" slide-up horizontal center-justified layout>
-          <div class="card" self-center vertical center layout>
-            <paper-shadow z="1"></paper-shadow>
+          <div class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout>
+            <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">{{gifieCardTitle}}</h2>
             </core-toolbar>
             <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></video>
             <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}">
-            <paper-progress value="{{gifieProgress}}" secondaryProgress="30" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
+            <paper-progress value="{{gifieProgress}}" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
             <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime" hidden?="{{gifieProgress !== 100}}"></paper-fab>
           </div>
         </div>
@@ -40,9 +43,11 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <div class="card" self-center vertical center layout>
-            <paper-shadow z="1"></paper-shadow>
-            <h2>fzfe</h2>
+          <div class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout>
+            <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
+            <core-toolbar class="card-toolbar" horizontal layout center>
+              <h2 class="card-title">Cool</h2>
+            </core-toolbar>
             <paper-fab icon="done" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
           </div>
         </div>
