@@ -33,8 +33,8 @@
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">{{gifieCardTitle}}</h2>
             </core-toolbar>
-            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></video>
-            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}">
+            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}" class="{{ {'mobileTopMargin': devices.mobile} | tokenList}}"></video>
+            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileTopMargin': devices.mobile} | tokenList}}">
             <paper-progress value="{{gifieProgress}}" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
             <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime" hidden?="{{gifieProgress !== 100}}"></paper-fab>
           </div>
