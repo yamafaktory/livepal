@@ -25,7 +25,7 @@
     "koa-static": "^1.4.7",
     "myth": "^1.2.0",
     "peer": "^0.2.7",
-    "peerjs": "^0.3.10",
+    "peerjs": "git://github.com/peers/peerjs.git",
     "run-sequence": "^0.3.7",
     "vinyl-source-stream": "^0.1.1"
   }

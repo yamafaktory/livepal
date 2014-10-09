@@ -1,7 +1,7 @@
 'use strict';
 
 // Import peerjs
-import Peer from 'peerjs/dist/peer.min.js';
+import Peer from 'peerjs';
 
 // Import gifshot
 import gifshot from 'gifshot/build/gifshot.min.js';
