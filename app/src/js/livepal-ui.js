@@ -1,15 +1,27 @@
 Polymer('livepal-ui', {
-  // Create
   created: function () {
+    // Init some properties
     this.devices = {};
-    this.gifieCardTitle = 'Make a gifie';
     this.gifieProgress = 0;
+    this.pageTransitionIsActive = false;
+    // Custom listeners for pages transition
+    this.WatchPagesTransition();
   },
   // Set observers
   observe: {
-    //'$.username.inputValue': 'test'
+    //'$.usernameSection': 'hideFab'
   },
   // Methods
+  WatchPagesTransition: function () {
+    window.addEventListener('core-animated-pages-transition-prepare', event => {
+      this.pageTransitionIsActive = true;
+      console.log('transition');
+    });
+    window.addEventListener('core-animated-pages-transition-end', event => {
+      this.pageTransitionIsActive = false;
+      console.log('transition-end');
+    });
+  },
   isInvalid: function (string) {
     let usernameRegex = /^\S{5,20}$/;
     return !usernameRegex.test(string);
@@ -19,7 +31,7 @@ Polymer('livepal-ui', {
       // Number of web workers
       'numWorkers': 4,
       // Number of frames
-      'numFrames': 30,
+      'numFrames': 20,
       // Video element
       'webcamVideoElement': this.$.video,
       // Camera always on
@@ -36,6 +48,7 @@ Polymer('livepal-ui', {
       },
       // Done
       'completeCallback': () => {
+        console.log('done');
         //this.gifieCardTitle = 'Cool one!';
       }
     }, obj => {

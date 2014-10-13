@@ -10,11 +10,11 @@
     "polymer-test-tools": "Polymer/polymer-test-tools"
   },
   "homepage": "https://github.com/Polymer/paper-ripple",
-  "_release": "2b076931ef",
+  "_release": "989dea89d6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2b076931ef348663032eaa582ea8ce2d9ec4955f"
+    "commit": "989dea89d69439b4bed4baa35460c22f7bbfa307"
   },
   "_source": "git://github.com/Polymer/paper-ripple.git",
   "_target": "master",

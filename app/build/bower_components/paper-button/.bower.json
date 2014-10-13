@@ -3,17 +3,17 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
+    "core-focusable": "Polymer/core-focusable#master",
     "core-icon": "Polymer/core-icon#master",
-    "paper-focusable": "Polymer/paper-focusable#master",
     "paper-ripple": "Polymer/paper-ripple#master",
     "paper-shadow": "Polymer/paper-shadow#master"
   },
   "homepage": "https://github.com/Polymer/paper-button",
-  "_release": "cbf4a44bb8",
+  "_release": "8d02bba52d",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cbf4a44bb8d4a4957e86dd2e5bd9d23eb3234a57"
+    "commit": "8d02bba52dcf7e743971f327549cc1efe06e4500"
   },
   "_source": "git://github.com/Polymer/paper-button.git",
   "_target": "master",

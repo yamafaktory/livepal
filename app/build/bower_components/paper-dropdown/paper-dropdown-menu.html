@@ -9,18 +9,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!--
 
-`paper-dropdown` is a control where the user can choose from an array of
+`paper-dropdown-menu` is a control where the user can choose from an array of
 options in a drop-down menu. The currently selected option is displayed in
 the control.
 
 Example:
 
-    <paper-dropdown selected="Financier" valueattr="label">
+    <paper-dropdown-menu selected="Financier" valueattr="label">
         <paper-item label="Croissant"></paper-item>
         <paper-item label="Donut"></paper-item>
         <paper-item label="Financier"></paper-item>
         <paper-item label="Madeleine"></paper-item>
-    </core-dropdown>
+    </paper-dropdown-menu>
 
 This example renders a drop-down menu with 4 options, with the option
 `Financier` pre-selected.
@@ -28,17 +28,17 @@ This example renders a drop-down menu with 4 options, with the option
 Theming
 -------
 
-Style the drop-down menu with the `paper-dropdown::shadow #menu` selector.
+Style the drop-down menu with the `paper-dropdown-menu::shadow #menu` selector.
 
 Example:
 
-    paper-dropdown::shadow #dropdown {
+    paper-dropdown-menu::shadow #dropdown {
         background-color: #eee;
         border: 1px solid #ccc;
     }
 
 @group Paper Elements
-@element paper-dropdown
+@element paper-dropdown-menu
 @status beta
 @homepage github.io
 -->
@@ -74,12 +74,12 @@ contains the selection state.
     <core-icon id="arrow" icon="{{opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
   </div>
 
-  <core-dropdown id="dropdown" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" margin="12">
+  <core-dropdown id="dropdown" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}">
 
     <paper-shadow z="1" target="{{$.dropdown}}" hasPosition></paper-shadow>
 
     <div class="menu-container">
-      <core-menu id="menu" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-select="{{selectAction}}">
+      <core-menu id="menu" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-activate="{{activateAction}}">
         <content></content>
       </core-menu>
     </div>
@@ -181,7 +181,7 @@ contains the selection state.
        * Vertically align the dropdown menu with the control.
        * @attribute valign
        * @type "top"|"bottom"
-       * @default "bottom"
+       * @default "top"
        */
       valign: 'top'
 
@@ -191,7 +191,7 @@ contains the selection state.
       this.opened = !this.opened;
     },
 
-    selectAction: function() {
+    activateAction: function() {
       this.opened = false;
     }
 

@@ -4,7 +4,7 @@
 import Peer from 'peerjs';
 
 // Import gifshot
-import gifshot from 'gifshot/build/gifshot.min.js';
+import gifshot from 'gifshot/build/gifshot.js';
 
 // Import components as prototypes
 import './livepal-ui';

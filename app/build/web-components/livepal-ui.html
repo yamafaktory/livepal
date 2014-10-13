@@ -21,8 +21,13 @@
               <h2 class="card-title">Choose a username</h2>
             </core-toolbar>
             <paper-input id="username" floatingLabel="true" label="Username" required error="5 to 20 characters without spaces" pattern="^\S{5,20}$"></paper-input>
-            <paper-fab icon="done" hidden?="{{$.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+            <template if="{{devices.large}}">
+              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
+            </template>
           </div>
+          <template if="{{devices.mobile}}">
+            <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate"></paper-fab>
+          </template>
         </div>
       </section>
 
@@ -31,13 +36,20 @@
           <div class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout>
             <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
             <core-toolbar class="card-toolbar" horizontal layout center>
-              <h2 class="card-title">{{gifieCardTitle}}</h2>
+              <h2 class="card-title">Make a gifie</h2>
             </core-toolbar>
-            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}" class="{{ {'mobileTopMargin': devices.mobile} | tokenList}}"></video>
-            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileTopMargin': devices.mobile} | tokenList}}">
+            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}"></video>
+            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
             <paper-progress value="{{gifieProgress}}" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
-            <paper-fab icon="done" on-tap="{{switch}}" data-target="2" class="lime" hidden?="{{gifieProgress !== 100}}"></paper-fab>
+            <template if="{{devices.large}}">
+              <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel-large" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+              <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate-large" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}"></paper-fab>
+            </template>
           </div>
+          <template if="{{devices.mobile}}">
+            <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}"></paper-fab>
+          </template>
         </div>
       </section>
 
@@ -46,10 +58,16 @@
           <div class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout>
             <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
             <core-toolbar class="card-toolbar" horizontal layout center>
-              <h2 class="card-title">Cool</h2>
+              <h2 class="card-title">Hi {{$.username.value}}</h2>
             </core-toolbar>
-            <paper-fab icon="done" on-tap="{{switch}}" data-target="1" class="lime"></paper-fab>
+            <img src="{{gifieData}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
+            <template if="{{devices.large}}">
+              <paper-fab icon="done" on-tap="{{switch}}" data-target="0" class="validate-large" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+            </template>
           </div>
+          <template if="{{devices.mobile}}">
+            <paper-fab icon="done" on-tap="{{switch}}" data-target="0" class="validate" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+          </template>
         </div>
       </section>
 

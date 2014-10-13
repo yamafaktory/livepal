@@ -5,11 +5,11 @@
     "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/core-style",
-  "_release": "2ca4326839",
+  "_release": "b1019b23f9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2ca4326839a3e16c51710b0433e666aa34b9e91b"
+    "commit": "b1019b23f9ee40dca6be4165fd86f4ce2517360c"
   },
   "_source": "git://github.com/Polymer/core-style.git",
   "_target": "master",

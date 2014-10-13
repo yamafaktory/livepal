@@ -51,12 +51,12 @@ gulp.task('browser-sync', ['nodemon'], function() {
 gulp.task('compile', function () {
   return browserify()
     .add(es6ify.runtime)
-    .require(require.resolve('app/src/js/livepal.js'), {entry: true, debug: true})
+    .require(require.resolve('app/src/js/livepal.js'), {entry: true, debug: false})
     .transform(es6ify)
     .bundle()
     .pipe(source('livepal.js'))
     .pipe($.streamify($.sourcemaps.init()))
-    .pipe($.streamify($.uglify({mangle: false})))
+    //.pipe($.streamify($.uglify({mangle: false})))
     .pipe($.streamify($.sourcemaps.write()))
     .pipe(gulp.dest(path.js.build));
 });
