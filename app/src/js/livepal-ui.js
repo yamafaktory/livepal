@@ -32,6 +32,8 @@ Polymer('livepal-ui', {
       'numWorkers': 4,
       // Number of frames
       'numFrames': 20,
+      // Pixels skipped during palette creation
+      'sampleInterval': 7,
       // Video element
       'webcamVideoElement': this.$.video,
       // Camera always on

@@ -43,6 +43,20 @@
     font-size: 1.4rem;
   }
 
+  paper-fab {
+    opacity: 1;
+    transition: all 1s ease;
+  }
+
+  paper-progress {
+    width: 100%;
+    height: .5rem;
+  }
+
+  paper-progress::shadow #progressContainer {
+    background-color: {{g.colors.pink500}};
+  }
+
   paper-progress::shadow #activeProgress {
     background-color: {{g.colors.lime200}};
   }
@@ -60,14 +74,14 @@
   }
 
   #video {
-    width: 200px;
+    height: 200px;
   }
 
   #toolbar {
     font-family: {{g.fonts.roboto}};
-    color: {{g.colors.white}};
-    background-color: {{g.colors.cyan600}};
-    z-index: 1;
+    color: {{g.colors.cyan600}};
+    background-color: {{g.colors.white}};
+    z-index: 3;
   }
 
   #username {
