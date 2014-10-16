@@ -23,6 +23,11 @@
     roboto: '"RobotoDraft", sans-serif'
   };
 
+  // Timing
+  CoreStyle.g.timing = {
+    bezier: 'cubic-bezier(.175, .885, .320, 1)'
+  };
+
   // Overriding paper elements defaults
 
   CoreStyle.g.paperInput.focusedColor = CoreStyle.g.colors.cyan600;
@@ -44,8 +49,10 @@
   }
 
   paper-fab {
-    opacity: 1;
-    transition: all 1s ease;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
   }
 
   paper-progress {
@@ -145,6 +152,30 @@
 
   .mobileAsset{
     padding-top: 4rem;
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+      -webkit-animation-timing-function: {{g.timing.bezier}};
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-animation-timing-function: {{g.timing.bezier}};
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      animation-timing-function: {{g.timing.bezier}};
+    }
+
+    100% {
+      opacity: 1;
+      animation-timing-function: {{g.timing.bezier}};
+    }
   }
 
 </core-style>
