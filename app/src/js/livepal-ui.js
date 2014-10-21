@@ -5,14 +5,17 @@ Polymer('livepal-ui', {
     this.gifieProgress = 0;
     this.pageTransitionIsActive = false;
     // Custom listeners for pages transition
-    this.WatchPagesTransition();
+    this.watchPagesTransition();
   },
   // Set observers
   observe: {
-    //'$.usernameSection': 'hideFab'
+    '$.username.value': 'test'
+  },
+  test : function () {
+    console.log(this.$.username.validity);
   },
   // Methods
-  WatchPagesTransition: function () {
+  watchPagesTransition: function () {
     window.addEventListener('core-animated-pages-transition-prepare', event => {
       this.pageTransitionIsActive = true;
       console.log('transition');

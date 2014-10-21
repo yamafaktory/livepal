@@ -7,8 +7,9 @@
 
   <core-style ref="livepal-ui"></core-style>
 
-    <core-toolbar id="toolbar" horizontal center-justified layout>
+    <core-toolbar id="toolbar">
       <paper-shadow z="{{devices.mobile | zValue}}"></paper-shadow>
+      <core-icon-button icon="menu"></core-icon-button>
       <h1>livepal</h1>
     </core-toolbar>
 
@@ -21,9 +22,11 @@
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Choose a username</h2>
             </core-toolbar>
-            <paper-input id="username" floatingLabel="true" label="Username" required error="5 to 20 characters without spaces" pattern="^\S{5,20}$"></paper-input>
+            <paper-input-decorator floatingLabel label="Username" required error="5 to 20 characters without spaces" isInvalid="{{!$.username.validity.valid}}" id="username-decorator">
+              <input is="core-input" required pattern="^\S{5,20}$" id="username">
+            </paper-input-decorator>
             <template if="{{devices.large}}">
-              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.username.inputValue | isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
+              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || !$.username.validity.valid}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
             </template>
           </div>
           <template if="{{devices.mobile}}">
