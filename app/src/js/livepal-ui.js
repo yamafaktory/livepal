@@ -11,8 +11,8 @@ Polymer('livepal-ui', {
   observe: {
     '$.username.value': 'test'
   },
-  test : function () {
-    console.log(this.$.username.validity);
+  checkUsername: function () {
+    this.$.usernameDecorator.isInvalid = !this.$.username.checkValidity();
   },
   // Methods
   watchPagesTransition: function () {
@@ -24,10 +24,6 @@ Polymer('livepal-ui', {
       this.pageTransitionIsActive = false;
       console.log('transition-end');
     });
-  },
-  isInvalid: function (string) {
-    let usernameRegex = /^\S{5,20}$/;
-    return !usernameRegex.test(string);
   },
   makeGifie: function () {
     this.gifshot.createGIF({
@@ -67,6 +63,7 @@ Polymer('livepal-ui', {
     });
   },
   switch: function (event, detail, sender) {
+    console.log(event, detail, sender);
     this.$.main.selected = sender.dataset.target;
   },
   zValue: function (isMobile) {
