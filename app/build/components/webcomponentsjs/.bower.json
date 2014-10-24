@@ -16,11 +16,11 @@
     "test",
     "tests"
   ],
-  "_release": "c97b56a2fa",
+  "_release": "bdd4aba5d8",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c97b56a2fa6e7f2d19431d47f99b5acdd9150dd2"
+    "commit": "bdd4aba5d89c0f25e3dcbf13898e5a8a6f8ef3e9"
   },
   "_source": "git://github.com/Polymer/webcomponentsjs.git",
   "_target": "master",

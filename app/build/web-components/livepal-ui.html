@@ -8,7 +8,7 @@
 
     <core-style ref="livepal-ui"></core-style>
 
-    <paper-shadow z="{{devices.mobile | zValue}}">
+    <paper-shadow animated>
       <core-toolbar id="toolbar">
         <core-icon-button icon="menu"></core-icon-button>
           <h1>livepal</h1>
@@ -19,34 +19,35 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <paper-shadow z="{{devices.mobile | zValue}}" class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="username-card">
+          <paper-shadow class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="username-card" animated>
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Choose a username</h2>
             </core-toolbar>
-
             <paper-input-decorator floatingLabel label="Username" error="5 to 20 characters without spaces" id="usernameDecorator">
               <input is="core-input" required pattern="^\S{5,20}$" id="username" on-input="{{checkUsername}}">
             </paper-input-decorator>
-
             <template if="{{devices.large}}">
-              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || !$.username.validity.valid}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
+              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid || $.username.value === ''}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
             </template>
           </paper-shadow>
           <template if="{{devices.mobile}}">
-            <paper-fab icon="done" hidden?="{{pageTransitionIsActive || !$.username.validity.valid}}" on-tap="{{switch}}" data-target="1" class="validate"></paper-fab>
+            <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate"></paper-fab>
           </template>
         </div>
       </section>
 
       <section>
         <div class="container" slide-up="{{selected === 0}}" slide-down="{{selected === 2}}" horizontal center-justified layout>
-          <paper-shadow z="{{devices.mobile | zValue}}" class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="gifie-card">
+          <paper-shadow class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout animated id="gifie-card">
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Make a gifie</h2>
             </core-toolbar>
             <paper-progress value="{{gifieProgress}}" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}"></paper-progress>
-            <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}"></video>
-            <img src="../images/user.svg" on-tap="{{makeGifie}}" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
+            <div id="gifie-container" center>
+              <paper-ripple fit on-tap="{{makeGifie}}"></paper-ripple>
+              <video id="video" hidden?="{{gifieProgress === 0 || gifieProgress === 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}"></video>
+              <img src="../images/user.svg" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
+            </div>
             <template if="{{devices.large}}">
               <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel-large" hidden?="{{pageTransitionIsActive || (gifieProgress > 0 && gifieProgress < 100)}}"></paper-fab>
               <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate-large" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}"></paper-fab>
@@ -61,7 +62,7 @@
 
       <section>
         <div class="container" slide-up="{{selected === 1}}" slide-down="{{selected === 3}}" horizontal center-justified layout>
-          <paper-shadow z="{{devices.mobile | zValue}}" class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="recap-card">
+          <paper-shadow class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="recap-card" animated>
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Hi {{$.username.value}}</h2>
             </core-toolbar>
@@ -80,7 +81,7 @@
 
       <section>
         <div class="container" slide-down horizontal center-justified layout>
-          <paper-shadow z="{{devices.mobile | zValue}}" class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="chat-card">
+          <paper-shadow class="{{ {'card': devices.mobile, 'card-large': devices.large} | tokenList}}" flex?="{{devices.mobile}}" vertical center layout id="chat-card" animated>
             <core-toolbar class="card-toolbar" horizontal layout center>
               <h2 class="card-title">Chat now!</h2>
             </core-toolbar>

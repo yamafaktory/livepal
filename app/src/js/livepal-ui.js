@@ -9,7 +9,7 @@ Polymer('livepal-ui', {
   },
   // Set observers
   observe: {
-    '$.username.value': 'test'
+    'devices.mobile': 'updateZ'
   },
   checkUsername: function () {
     this.$.usernameDecorator.isInvalid = !this.$.username.checkValidity();
@@ -18,11 +18,9 @@ Polymer('livepal-ui', {
   watchPagesTransition: function () {
     window.addEventListener('core-animated-pages-transition-prepare', event => {
       this.pageTransitionIsActive = true;
-      console.log('transition');
     });
     window.addEventListener('core-animated-pages-transition-end', event => {
       this.pageTransitionIsActive = false;
-      console.log('transition-end');
     });
   },
   makeGifie: function () {
@@ -63,10 +61,20 @@ Polymer('livepal-ui', {
     });
   },
   switch: function (event, detail, sender) {
-    console.log(event, detail, sender);
     this.$.main.selected = sender.dataset.target;
   },
-  zValue: function (isMobile) {
-    return isMobile ? 0 : 1;
+  updateZ: function () {
+    let self = this;
+    function changeZ(z, shadowRoot = self.shadowRoot) {
+      let paperShadowElements = shadowRoot.querySelectorAll('paper-shadow');
+      [].map.call(paperShadowElements, paperElement => {
+        paperElement.setZ(z);
+      });
+    }
+    if(this.devices.mobile) {
+      changeZ(0);
+    } else {
+      changeZ(1);
+    }
   }
 });

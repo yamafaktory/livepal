@@ -9,14 +9,14 @@
     "paper-shadow": "Polymer/paper-shadow#master"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^1.0.0"
+    "web-component-tester": "Polymer/web-component-tester#^1.1.4"
   },
   "homepage": "https://github.com/Polymer/paper-button",
-  "_release": "63e63ce64a",
+  "_release": "fbeb6ad14f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "63e63ce64a5f3901011135e93009868661965725"
+    "commit": "fbeb6ad14fe71df4abcf99fa49f2a64eab5d67a2"
   },
   "_source": "git://github.com/Polymer/paper-button.git",
   "_target": "master",
