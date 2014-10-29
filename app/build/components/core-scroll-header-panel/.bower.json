@@ -9,11 +9,11 @@
     "core-toolbar": "Polymer/core-toolbar#master"
   },
   "homepage": "https://github.com/Polymer/core-scroll-header-panel",
-  "_release": "cc24ce8b56",
+  "_release": "18603cc0c3",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cc24ce8b56a88c914dba5d8ef59ca25aa50dd142"
+    "commit": "18603cc0c3d112a29e5d4cc0dab556a17ffba5ce"
   },
   "_source": "git://github.com/Polymer/core-scroll-header-panel.git",
   "_target": "master",

@@ -27,11 +27,11 @@
               <input is="core-input" required pattern="^\S{5,20}$" id="username" on-input="{{checkUsername}}">
             </paper-input-decorator>
             <template if="{{devices.large}}">
-              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid || $.username.value === ''}}" on-tap="{{switch}}" data-target="1" class="validate-large"></paper-fab>
+              <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid || $.username.value === ''}}" on-tap="{{switch}}" data-target="1" class="validate-large" mini?="{{devices.mobile}}"></paper-fab>
             </template>
           </paper-shadow>
           <template if="{{devices.mobile}}">
-            <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate"></paper-fab>
+            <paper-fab icon="done" hidden?="{{pageTransitionIsActive || $.usernameDecorator.isInvalid}}" on-tap="{{switch}}" data-target="1" class="validate" mini?="{{devices.mobile}}"></paper-fab>
           </template>
         </div>
       </section>
@@ -49,13 +49,13 @@
               <img src="../images/user.svg" id="gifie" hidden?="{{gifieProgress > 0 && gifieProgress < 100}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
             </div>
             <template if="{{devices.large}}">
-              <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel-large" hidden?="{{pageTransitionIsActive || (gifieProgress > 0 && gifieProgress < 100)}}"></paper-fab>
-              <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate-large" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}"></paper-fab>
+              <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel-large" hidden?="{{pageTransitionIsActive || (gifieProgress > 0 && gifieProgress < 100)}}" mini?="{{devices.mobile}}"></paper-fab>
+              <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate-large" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}" mini?="{{devices.mobile}}"></paper-fab>
             </template>
           </paper-shadow>
           <template if="{{devices.mobile}}">
-            <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel" hidden?="{{pageTransitionIsActive}}"></paper-fab>
-            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}"></paper-fab>
+            <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="0" class="cancel" hidden?="{{pageTransitionIsActive}}" mini?="{{devices.mobile}}"></paper-fab>
+            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="2" class="validate" hidden?="{{pageTransitionIsActive || gifieProgress !== 100}}" mini?="{{devices.mobile}}"></paper-fab>
           </template>
         </div>
       </section>
@@ -68,13 +68,13 @@
             </core-toolbar>
             <img src="{{gifieData}}" class="{{ {'mobileAsset': devices.mobile} | tokenList}}">
             <template if="{{devices.large}}">
-              <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="1" class="cancel-large" hidden?="{{pageTransitionIsActive}}"></paper-fab>
-            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="3" class="validate-large" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+              <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="1" class="cancel-large" hidden?="{{pageTransitionIsActive}}" mini?="{{devices.mobile}}"></paper-fab>
+            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="3" class="validate-large" hidden?="{{pageTransitionIsActive}}" mini?="{{devices.mobile}}"></paper-fab>
             </template>
           </paper-shadow>
           <template if="{{devices.mobile}}">
-            <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="1" class="cancel" hidden?="{{pageTransitionIsActive}}"></paper-fab>
-            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="3" class="validate" hidden?="{{pageTransitionIsActive}}"></paper-fab>
+            <paper-fab icon="chevron-left" on-tap="{{switch}}" data-target="1" class="cancel" hidden?="{{pageTransitionIsActive}}" mini?="{{devices.mobile}}"></paper-fab>
+            <paper-fab icon="chevron-right" on-tap="{{switch}}" data-target="3" class="validate" hidden?="{{pageTransitionIsActive}}" mini?="{{devices.mobile}}"></paper-fab>
           </template>
         </div>
       </section>

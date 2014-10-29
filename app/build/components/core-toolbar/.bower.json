@@ -6,11 +6,11 @@
     "core-media-query": "Polymer/core-media-query#master"
   },
   "homepage": "https://github.com/Polymer/core-toolbar",
-  "_release": "85d9c11ea3",
+  "_release": "0b617c87c6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "85d9c11ea3f35061be776859db5a2451860da419"
+    "commit": "0b617c87c69c0559c2bf68955a12e6c1ce0525a2"
   },
   "_source": "git://github.com/Polymer/core-toolbar.git",
   "_target": "master",

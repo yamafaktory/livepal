@@ -56,7 +56,7 @@ gulp.task('compile', function () {
     .bundle()
     .pipe(source('livepal.js'))
     .pipe($.streamify($.sourcemaps.init()))
-    //.pipe($.streamify($.uglify({mangle: false})))
+    .pipe($.streamify($.uglify({mangle: false})))
     .pipe($.streamify($.sourcemaps.write()))
     .pipe(gulp.dest(path.js.build));
 });

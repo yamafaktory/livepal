@@ -11,11 +11,11 @@
     "paper-shadow": "Polymer/paper-shadow#master"
   },
   "homepage": "https://github.com/Polymer/paper-dropdown-menu",
-  "_release": "4ffabd5c20",
+  "_release": "3c4621ac6a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4ffabd5c200b6721908b55a59c26c00517384415"
+    "commit": "3c4621ac6a1287180c540e6be461031503dc7b07"
   },
   "_source": "git://github.com/Polymer/paper-dropdown-menu.git",
   "_target": "master",

@@ -12,11 +12,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.1.4"
   },
   "homepage": "https://github.com/Polymer/core-dropdown",
-  "_release": "dd567d8b43",
+  "_release": "a25c59b690",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "dd567d8b43569ffd6e952288b7a5a49992d4fc93"
+    "commit": "a25c59b690cd801a8735c74d6743cf703440c027"
   },
   "_source": "git://github.com/Polymer/core-dropdown.git",
   "_target": "master",
