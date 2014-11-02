@@ -6,9 +6,11 @@
     "js": "node --harmony"
   },
   "ignore": [
+    ".git",
     "node_modules/"
   ],
+  "restartable": "rs",
   "watch": [
-    "index.js"
+    "server/index.js"
   ]
 }

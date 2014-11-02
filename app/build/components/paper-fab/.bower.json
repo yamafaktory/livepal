@@ -13,11 +13,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.1.4"
   },
   "homepage": "https://github.com/Polymer/paper-fab",
-  "_release": "a990c4b8e9",
+  "_release": "5852be457f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a990c4b8e9594a3eb50973f923b1b87c0168db65"
+    "commit": "5852be457f652ba1e4b43cecde85be96c61b9ea8"
   },
   "_source": "git://github.com/Polymer/paper-fab.git",
   "_target": "master",

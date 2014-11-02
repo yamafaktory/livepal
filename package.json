@@ -27,6 +27,7 @@
     "peer": "^0.2.7",
     "peerjs": "git://github.com/peers/peerjs.git",
     "run-sequence": "^0.3.7",
-    "vinyl-source-stream": "^0.1.1"
+    "vinyl-source-stream": "^0.1.1",
+    "webcomponents.js": "git://github.com/Polymer/webcomponentsjs.git"
   }
 }

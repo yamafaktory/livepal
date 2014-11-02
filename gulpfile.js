@@ -55,7 +55,7 @@ gulp.task('compile', function () {
     .transform(es6ify)
     .bundle()
     .pipe(source('livepal.js'))
-    .pipe($.streamify($.sourcemaps.init()))
+    .pipe($.streamify($.sourcemaps.init({loadMaps: true})))
     .pipe($.streamify($.uglify({mangle: false})))
     .pipe($.streamify($.sourcemaps.write()))
     .pipe(gulp.dest(path.js.build));
