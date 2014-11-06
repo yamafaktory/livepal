@@ -8,11 +8,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.1.0"
   },
   "homepage": "https://github.com/Polymer/core-localstorage",
-  "_release": "da144d5409",
+  "_release": "b32449003f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "da144d5409f02e0ac4336de3a2c7a4167c5e1ffd"
+    "commit": "b32449003faf09d756d8e0b766288b7dcf62fca1"
   },
   "_source": "git://github.com/Polymer/core-localstorage.git",
   "_target": "master",

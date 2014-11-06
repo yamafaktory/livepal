@@ -1,8 +1,5 @@
 'use strict';
 
-// Import webcomponents
-import 'webcomponents.js';
-
 // Import peerjs
 import Peer from 'peerjs';
 

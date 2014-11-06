@@ -10,11 +10,11 @@
     "core-toolbar": "Polymer/core-toolbar#master"
   },
   "homepage": "https://github.com/Polymer/sampler-scaffold",
-  "_release": "ddeb0b423f",
+  "_release": "f00ff6f8e2",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ddeb0b423fc93c566c95abfd40c5c1ce5c6e2b3d"
+    "commit": "f00ff6f8e228f3f81c24227ebbe14a8bd0ae718c"
   },
   "_source": "git://github.com/Polymer/sampler-scaffold.git",
   "_target": "master",

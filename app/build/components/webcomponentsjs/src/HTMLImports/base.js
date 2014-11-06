@@ -6,6 +6,12 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
+
+/*
+ * PLEASE NOTE: This file is duplicated within Polymer. Please keep it in sync!
+ * https://github.com/Polymer/polymer/blob/master/src/system/HTMLImports/base.js
+ */
+
 /*
 	Create polyfill scope and feature detect native support.
 */
@@ -19,18 +25,6 @@ window.HTMLImports = window.HTMLImports || {flags:{}};
 */
 var IMPORT_LINK_TYPE = 'import';
 var useNative = Boolean(IMPORT_LINK_TYPE in document.createElement('link'));
-
-// world's simplest module initializer
-var modules = [];
-var addModule = function(module) {
-	modules.push(module);
-};
-
-var initializeModules = function() {
-	modules.forEach(function(module) {
-		module(scope);
-	});
-};
 
 /**
   Support `currentScript` on all browsers as `document._currentScript.`
@@ -212,18 +206,6 @@ if (useNative) {
 
 }
 
-// IE shim for CustomEvent
-if (typeof window.CustomEvent !== 'function') {
-  window.CustomEvent = function(inType, dictionary) {
-     var e = document.createEvent('HTMLEvents');
-     e.initEvent(inType,
-        dictionary.bubbles === false ? false : true,
-        dictionary.cancelable === false ? false : true,
-        dictionary.detail);
-     return e;
-  };
-}
-
 // Fire the 'HTMLImportsLoaded' event when imports in document at load time 
 // have loaded. This event is required to simulate the script blocking 
 // behavior of native imports. A main document script that needs to be sure
@@ -239,11 +221,8 @@ whenReady(function() {
 // exports
 scope.IMPORT_LINK_TYPE = IMPORT_LINK_TYPE;
 scope.useNative = useNative;
-scope.addModule = addModule;
-scope.initializeModules = initializeModules;
 scope.rootDocument = rootDocument;
 scope.whenReady = whenReady;
 scope.isIE = isIE;
 
-})(window.HTMLImports);
-
+})(HTMLImports);

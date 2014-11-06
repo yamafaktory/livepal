@@ -12,11 +12,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.1.4"
   },
   "homepage": "https://github.com/Polymer/paper-button",
-  "_release": "fbeb6ad14f",
+  "_release": "93e1f6b8d2",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "fbeb6ad14fe71df4abcf99fa49f2a64eab5d67a2"
+    "commit": "93e1f6b8d231530c6ffa4c30441a3cde8dadb339"
   },
   "_source": "git://github.com/Polymer/paper-button.git",
   "_target": "master",
