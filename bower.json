@@ -13,6 +13,7 @@
   "private": true,
   "devDependencies": {
     "polymer": "Polymer/polymer#master",
+    "webcomponentsjs": "Polymer/webcomponentsjs#master",
     "core-animation": "Polymer/core-animation#master",
     "core-animated-pages": "Polymer/core-animated-pages#master",
     "core-localstorage": "Polymer/core-localstorage#master",
